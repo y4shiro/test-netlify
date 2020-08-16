@@ -7,12 +7,24 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Push from 'push.js'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  mounted: function(){
+    this.push();
+  },
+  methods: {
+    hello: function(){
+      console.log('hello');
+    },
+    push: function(){
+      Push.create('Hello Push');
+    }
+  },
 }
 </script>
 
